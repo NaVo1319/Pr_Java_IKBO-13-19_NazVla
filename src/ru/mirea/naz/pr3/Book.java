@@ -1,4 +1,4 @@
-package ru.mirea.naz;
+package ru.mirea.naz.pr3;
 
 public class Book {
     private String name;

@@ -1,8 +1,9 @@
-package ru.mirea.naz;
+package ru.mirea.naz.pr3;
 
-public class HumanHand {
+public class HumanLeg {
     private int Health;
-    public HumanHand(int health){Health=health;}
+    public HumanLeg(int health){Health=health;}
+
 
     public int getHealth() {
         return Health;
@@ -11,6 +12,7 @@ public class HumanHand {
     public void setHealth(int health) {
         Health = health;
     }
+
     @Override
     public String toString() {
         return Health+"/100";
