@@ -30,20 +30,22 @@ public class Test3 extends JPanel {
         Image[] img = new Image[40];
         String fileName;
         for(int i=0; i<40;++i) {
-            fileName="chaos-00";
+            fileName="chaos_00";
             if(i<10){fileName+="0";}
             fileName+=i;
+            System.out.println("./src/ru/mirea/naz/pr8/resurses/"+fileName+"_Слой"+(40-i)+".jpg");
             try {
-                img[i] = ImageIO.read(new File("./src/ru/mirea/naz/pr8/resurses/"+fileName+".jpg"));
+                img[i] = ImageIO.read(new File("./src/ru/mirea/naz/pr8/resurses/"+fileName+"_Слой "+(40-i)+".jpg"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        frame.setBounds(400,200,450,420);
+        frame.setBounds(400,200,466,450);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Container container=frame.getContentPane();
         container.add(new Test3(img));
         frame.setVisible(true);
+        frame.setResizable(false);
         while(true){
             for(int i=0;i<40;++i){
                 frame.repaint();
