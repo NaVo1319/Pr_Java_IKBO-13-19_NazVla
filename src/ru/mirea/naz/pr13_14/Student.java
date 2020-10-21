@@ -1,21 +1,22 @@
 package ru.mirea.naz.pr13_14;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Student {
-     private int ID;
+     private int IDNumber;
      private int[] marks;
-    Student(int id,int ...marks){
-        this.ID=id;
-        this.marks=marks;
+    Student(int id,int[] x){
+        this.IDNumber=id;
+        marks=x;
     }
 
     public int getID() {
-        return ID;
+        return IDNumber;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.IDNumber = ID;
     }
 
     public int[] getMarks() {
@@ -27,17 +28,16 @@ public class Student {
     }
     public String printMark(){
         String a="";
-        //for(int i:marks){
-        //    a+=i+", ";
-       // }
-        double sum = 0;
-        for (int i = 0; i < this.getMarks().length; ++i) {
-            sum += this.getMarks()[i];
-        }
-        return ""+sum / this.getMarks().length;
+        int sum=0;
+        for(int i:marks){
+           a+=i+", ";
+           sum+=i;
+       }
+        a+="Среднее значение: "+sum/ marks.length+"";
+        return a;
     }
     @Override
     public String toString() {
-        return "ID: "+ID+", Marks: "+printMark();
+        return "ID: "+IDNumber+", Marks: "+printMark();
     }
 }
