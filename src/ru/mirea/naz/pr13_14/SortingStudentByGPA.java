@@ -1,13 +1,8 @@
 package ru.mirea.naz.pr13_14;
 
-public class SortingStudentByGPA implements Comparator {
-    private double Mid(Student student) {
-        double sum = 0;
-        for (int i = 0; i < student.getMarks().length; ++i) {
-            sum += student.getMarks()[i];
-        }
-        return sum / student.getMarks().length;
-    }
+import java.util.Comparator;
+
+public class SortingStudentByGPA implements Comparator<Student> {
 
     public Student[] mergeSort(Student[] source, int left, int right) {
         int delimiter = left + ((right - left) / 2) + 1;
@@ -18,7 +13,7 @@ public class SortingStudentByGPA implements Comparator {
         Student[] buffer = new Student[right - left + 1];
         int cursor = left;
         for (int i = 0; i < buffer.length; i++) {
-            if (delimiter > right || Mid(source[cursor]) > Mid(source[delimiter])) {
+            if (delimiter > right || compare(source[cursor],source[delimiter])==1)  {
                 buffer[i] = source[cursor];
                 cursor++;
             } else {
@@ -29,8 +24,6 @@ public class SortingStudentByGPA implements Comparator {
         System.arraycopy(buffer, 0, source, left, buffer.length);
         return buffer;
     }
-
-    @Override
     public Student[] MergeSort(Student[] students) {
         return mergeSort(students,0,students.length-1);
     }
@@ -44,10 +37,10 @@ public class SortingStudentByGPA implements Comparator {
         Student opora = array[middle];
         int i = low, j = high;
         while (i <= j) {
-            while (Mid(array[i]) > Mid(opora)) {
+            while (compare(array[i],opora)==1) {
                 i++;
             }
-            while (Mid(array[j]) < Mid(opora)) {
+            while (compare(array[j],opora)==-1) {
                 j--;
             }
             if (i <= j) {
@@ -64,12 +57,9 @@ public class SortingStudentByGPA implements Comparator {
             quickSort(array, i, high);
         return array;
     }
-
-    @Override
     public Student[] QuickSort(Student[] students) {
         return quickSort(students,0, students.length-1);
     }
-    @Override
     public Student linearSearch(Student arr[], int elementToSearch) {
 
         for (int index = 0; index < arr.length; index++) {
@@ -78,7 +68,6 @@ public class SortingStudentByGPA implements Comparator {
         }
         return null;
     }
-    @Override
     public Student binarySearch(Student arr[], int elementToSearch) {
 
         int firstIndex = 0;
@@ -96,7 +85,6 @@ public class SortingStudentByGPA implements Comparator {
         }
         return null;
     }
-    @Override
     public Student recursiveBinarySearch(Student arr[], int firstElement, int lastElement, int elementToSearch) {
         if (lastElement >= firstElement) {
             int mid = firstElement + (lastElement - firstElement) / 2;
@@ -108,5 +96,20 @@ public class SortingStudentByGPA implements Comparator {
         }
 
         return null;
+    }
+    @Override
+    public int compare(Student o1, Student o2) {
+        double sum1=0,sum2=0;
+        for(int i: o1.getMarks()){
+            sum1+=i;
+        }
+        sum1/=o1.getMarks().length;
+        for(int i: o2.getMarks()){
+            sum2+=i;
+        }
+        sum2/=o2.getMarks().length;
+        if(sum1>sum2){return 1;}
+        if(sum1<sum2){return -1;}
+        return 0;
     }
 }

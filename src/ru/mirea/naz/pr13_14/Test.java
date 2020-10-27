@@ -1,6 +1,7 @@
 package ru.mirea.naz.pr13_14;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Test {
@@ -31,7 +32,7 @@ public class Test {
             Student s1=new Student(i+1, randMark(marks));
             students[i]=s1;
         }
-        Comparator sort=new SortingStudentByGPA();
+        SortingStudentByGPA sort=new SortingStudentByGPA();
         for(int i=0;i<size;++i){
             System.out.println(students[i]);
         }

@@ -1,7 +1,6 @@
 package ru.mirea.naz.pr13_14;
 
-import java.util.Arrays;
-import java.util.Random;
+import java.util.Comparator;
 
 public class Student {
      private int IDNumber;
@@ -40,4 +39,5 @@ public class Student {
     public String toString() {
         return "ID: "+IDNumber+", Marks: "+printMark();
     }
+
 }
