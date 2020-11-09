@@ -40,7 +40,7 @@ public class MainThread extends Thread {
                 panel.hero.icon=panel.hero.Dam;
                 panel.repaint();
                 try {
-                    Thread.sleep(40);
+                    Thread.sleep(600);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

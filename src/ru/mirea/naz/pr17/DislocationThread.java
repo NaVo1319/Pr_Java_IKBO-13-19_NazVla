@@ -1,8 +1,10 @@
 package ru.mirea.naz.pr17;
 
+import javax.swing.*;
+
 public class DislocationThread extends Thread {
     Panel panel;
-
+    int time=0;
     public DislocationThread(Panel panel) {
         this.panel = panel;
     }
@@ -32,9 +34,24 @@ public class DislocationThread extends Thread {
                 }
             }
             try {
-                Thread.sleep(80);
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }
+            time++;
+            if(time==100 && panel.hero.health!=150){
+                panel.hero.health+=5;
+                System.out.println("Health+++++");
+                time=0;
+            }
+            if(!panel.m1.life &&!panel.m2.life &&!panel.m3.life &&!panel.m4.life && panel.hero.life){
+                try {
+                    Thread.sleep(2100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                JOptionPane.showMessageDialog(panel,"You Win!");
+                System.exit(0);
             }
         }
     }

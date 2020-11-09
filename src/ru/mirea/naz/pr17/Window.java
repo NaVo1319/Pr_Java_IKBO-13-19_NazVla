@@ -13,7 +13,7 @@ public class Window extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setResizable(false);
-        this.setBounds(0,0,400,400);
+        this.setBounds(0,0,1000,800);
         this.setVisible(true);
         panel.setBounds(0,0,this.getWidth(),this.getHeight());
         container.add(panel);

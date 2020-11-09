@@ -1,6 +1,8 @@
 package ru.mirea.naz.pr17;
 
 
+import java.util.Random;
+
 public class MonsterThread extends Thread {
     Panel panel;
     Monster m1;
@@ -62,7 +64,26 @@ public class MonsterThread extends Thread {
                         m1.health-=panel.hero.damage;
                         if(m1.health<=0){
                             m1.life=false;
-                            break;
+                            m1.icon=m1.death;
+                            try {
+                                Thread.sleep(5000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            Random random=new Random();
+                            if(random.nextInt(100)<50){
+                                m1.life=true;
+                                m1.health=100;
+                                m1.icon=m1.runR;
+                                try {
+                                    Thread.sleep(800);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            else{
+                                break;
+                            }
                         }
                         System.out.println("-----------------");
                     }
