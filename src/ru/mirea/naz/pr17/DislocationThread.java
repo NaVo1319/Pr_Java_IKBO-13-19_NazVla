@@ -46,7 +46,7 @@ public class DislocationThread extends Thread {
             }
             if(!panel.m1.life &&!panel.m2.life &&!panel.m3.life &&!panel.m4.life && panel.hero.life){
                 try {
-                    Thread.sleep(2100);
+                    Thread.sleep(4100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

@@ -5,7 +5,8 @@ import java.util.Comparator;
 public class Student {
      private int IDNumber;
      private int[] marks;
-    Student(int id,int[] x){
+     private String name;
+     public Student(int id,int[] x){
         this.IDNumber=id;
         marks=x;
     }
@@ -20,6 +21,14 @@ public class Student {
 
     public int[] getMarks() {
         return marks;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setMarks(int[] marks) {
@@ -37,7 +46,7 @@ public class Student {
     }
     @Override
     public String toString() {
-        return "ID: "+IDNumber+", Marks: "+printMark();
+        return "ID: "+IDNumber+", |"+name+"| Marks: "+printMark();
     }
 
 }

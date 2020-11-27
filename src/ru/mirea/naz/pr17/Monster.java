@@ -15,9 +15,6 @@ public class Monster {
     boolean life=true;
     MonsterThread thread;
     Image icon=new ImageIcon(".\\src\\ru\\mirea\\naz\\pr17\\Resurses\\GostR.gif").getImage();
-    Image runR=new ImageIcon(".\\src\\ru\\mirea\\naz\\pr17\\Resurses\\GostL.gif").getImage();
-    Image runL=new ImageIcon(".\\src\\ru\\mirea\\naz\\pr17\\Resurses\\GostR.gif").getImage();
-    Image death=new ImageIcon(".\\src\\ru\\mirea\\naz\\pr17\\Resurses\\GostDeath.gif").getImage();
     public Monster(int health, int speed, int x, int y, Panel panel,int xStart,int yStart) {
         this.health = health;
         this.speed = speed;

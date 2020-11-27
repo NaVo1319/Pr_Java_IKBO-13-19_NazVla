@@ -30,7 +30,6 @@ public class MainThread extends Thread {
             if(panel.dislocation==0)panel.room.MoveTrue(moveTrue, panel.hero.x,panel.hero.y);
             if(panel.dislocation==1)panel.room2.MoveTrue(moveTrue, panel.hero.x,panel.hero.y);
             if(panel.dislocation==3)moveTrue=new boolean[]{true,true,true,true};
-            System.out.println(panel.dislocation);
             if(panel.hero.life==false){
                 JOptionPane.showMessageDialog(panel,"Game Over");
                 System.exit(0);

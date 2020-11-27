@@ -23,21 +23,21 @@ public class ControlsListener implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode()==KeyEvent.VK_LEFT) isLeft = true;
-        if (e.getKeyCode()==KeyEvent.VK_RIGHT) isRight = true;
-        if (e.getKeyCode()==KeyEvent.VK_UP) isUp = true;
-        if (e.getKeyCode()==KeyEvent.VK_DOWN) isDown = true;
+        if (e.getKeyCode()==65) isLeft = true;
+        if (e.getKeyCode()==68) isRight = true;
+        if (e.getKeyCode()==87) isUp = true;
+        if (e.getKeyCode()==83) isDown = true;
         if(e.getKeyCode()==70) f=true;
         if(e.getKeyCode()!=70)log=e.getKeyCode();
-        System.out.println(log);
+        if(log!=0)System.out.println(log);
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if (e.getKeyCode()==KeyEvent.VK_LEFT) isLeft = false;
-        if (e.getKeyCode()==KeyEvent.VK_RIGHT) isRight = false;
-        if (e.getKeyCode()==KeyEvent.VK_UP) isUp = false;
-        if (e.getKeyCode()==KeyEvent.VK_DOWN) isDown = false;
+        if (e.getKeyCode()==65) isLeft = false;
+        if (e.getKeyCode()==68) isRight = false;
+        if (e.getKeyCode()==87) isUp = false;
+        if (e.getKeyCode()==83) isDown = false;
         if(e.getKeyCode()==70) f=false;
     }
 }

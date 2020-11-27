@@ -5,6 +5,9 @@ import java.awt.*;
 
 public class Panel extends JPanel {
     Image portret=new ImageIcon(".\\src\\ru\\mirea\\naz\\pr17\\Resurses\\Portret.jpg").getImage();
+    Image runR=new ImageIcon(".\\src\\ru\\mirea\\naz\\pr17\\Resurses\\GostL.gif").getImage();
+    Image runL=new ImageIcon(".\\src\\ru\\mirea\\naz\\pr17\\Resurses\\GostR.gif").getImage();
+    Image death=new ImageIcon(".\\src\\ru\\mirea\\naz\\pr17\\Resurses\\GostDeath.gif").getImage();
     Room room=new Room(new ImageIcon(".\\src\\ru\\mirea\\naz\\pr17\\Resurses\\MainRoom.jpg").getImage(),500,500,1000,1000);
     Room room2=new Room(new ImageIcon(".\\src\\ru\\mirea\\naz\\pr17\\Resurses\\VKRoom.jpg").getImage(),506,1450,1000,325);
     Room spawn=new Room(new ImageIcon("").getImage(),180,180,1,1);

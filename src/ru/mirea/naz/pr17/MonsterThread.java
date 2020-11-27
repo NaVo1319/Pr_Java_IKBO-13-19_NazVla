@@ -64,7 +64,7 @@ public class MonsterThread extends Thread {
                         m1.health-=panel.hero.damage;
                         if(m1.health<=0){
                             m1.life=false;
-                            m1.icon=m1.death;
+                            m1.icon=panel.death;
                             try {
                                 Thread.sleep(5000);
                             } catch (InterruptedException e) {
@@ -74,7 +74,7 @@ public class MonsterThread extends Thread {
                             if(random.nextInt(100)<50){
                                 m1.life=true;
                                 m1.health=100;
-                                m1.icon=m1.runR;
+                                m1.icon=panel.runR;
                                 try {
                                     Thread.sleep(800);
                                 } catch (InterruptedException e) {
@@ -85,7 +85,6 @@ public class MonsterThread extends Thread {
                                 break;
                             }
                         }
-                        System.out.println("-----------------");
                     }
                 }
             }
@@ -93,6 +92,11 @@ public class MonsterThread extends Thread {
                 if(m1.x<=panel.hero.x+m1.damageRad/2 && m1.x>=panel.hero.x-m1.damageRad/2){
                     if(m1.y<=panel.hero.y+10 && m1.y>=panel.hero.y-10){
                         panel.hero.health-=m1.damage;
+                        try {
+                            Thread.sleep(200);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         if(panel.hero.health<=0)panel.hero.life=false;
                         System.out.println("----You death------");
                     }
@@ -100,15 +104,15 @@ public class MonsterThread extends Thread {
             }
             if (panel.hero.x < m1.x) {
                 if(MoveTrue(panel.hero.x,m1.x,true)){
-                    m1.icon= m1.runR;
+                    m1.icon= panel.runR;
                     m1.x -= m1.speed;}
                 else{
-                    m1.icon= m1.runR;
+                    m1.icon= panel.runR;
                     moveHome();
                 }
             } else if (panel.hero.x > m1.x) {
                 if(MoveTrue(panel.hero.x,m1.x,false)){
-                    m1.icon= m1.runL;
+                    m1.icon= panel.runL;
                     m1.x += m1.speed;}
                 else{
 
@@ -118,18 +122,18 @@ public class MonsterThread extends Thread {
 
             } else if (panel.hero.y < m1.y) {
                 if(MoveTrue(panel.hero.y,m1.y,true)){
-                    m1.icon= m1.runR;
+                    m1.icon= panel.runR;
                     m1.y -= m1.speed;}
                 else{
-                    m1.icon= m1.runR;
+                    m1.icon= panel.runR;
                     moveHome();
                 }
             } else if (panel.hero.y > m1.y) {
                 if(MoveTrue(panel.hero.y,m1.y,false)) {
-                    m1.icon= m1.runL;
+                    m1.icon= panel.runL;
                     m1.y += m1.speed;}
                 else{
-                    m1.icon= m1.runL;
+                    m1.icon= panel.runL;
                     moveHome();
                 }
             }
